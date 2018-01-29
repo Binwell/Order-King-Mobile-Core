@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using OrderKingCoreDemo.UI;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace OrderKingCoreDemo
 {
 	public partial class App : Application
@@ -13,7 +11,12 @@ namespace OrderKingCoreDemo
 		{
 			InitializeComponent();
 
-			MainPage = new ContentPage();
+			NavigationService.Init(this);
+			DialogService.Init(this);
+
+			MainPage = new ContentPage {
+				BackgroundColor = Color.Yellow
+			};
 		}
 
 		protected override void OnStart ()
