@@ -73,12 +73,10 @@ namespace OrderKingCoreDemo.UI {
 				_isBusy = true;
 
 				var masterDetailPage = new MasterDetailPage {
-					Master = GetInitializedPage(masterName.ToString(),
-						withBackButton: false),
+					Master = GetInitializedPage(masterName.ToString(), navParams: navParams,
+						withBackButton: false, toTitle: masterName.ToString()),
 					Detail = GetInitializedPage(detailName.ToString(),
-						NavigationMode.Normal,
-						navParams, true, false,
-						withBackButton: false)
+						NavigationMode.Normal, navParams, true, false, false)
 				};
 				_app.MainPage = masterDetailPage;
 				_navigations?.Clear();

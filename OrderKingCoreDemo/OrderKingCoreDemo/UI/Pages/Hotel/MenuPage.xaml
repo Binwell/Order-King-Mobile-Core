@@ -5,9 +5,15 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Hotel.MenuPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="MenuPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<Label Text="MenuPage"/>
+			<Button Text="HotelInfo" Command="{Binding GoToHotelInfoCommand}"/>
+	        <Button Text="Login" Command="{Binding GoToLoginCommand}"/>
+	        <Button Text="ServiceList" Command="{Binding GoToServiceListCommand}"/>
+			<Button Text="RestaurantList" Command="{Binding GoToRestaurantListCommand}"/>
+			<Button Text="FitnessList" Command="{Binding GoToFitnessListCommand}"/>
+			<Button Text="GuideCategories" Command="{Binding GoToGuideCategoriesCommand}"/>
+			<Button Text="ChatCategories" Command="{Binding GoToChatCategoriesCommand}"/>
+			<Button Text="Profile" Command="{Binding GoToProfileCommand}"/>
+		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

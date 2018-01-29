@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Chat.ChatCategoriesPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="ChatCategories"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="ChatCategories"/>
+			<Button Text="Chat" Command="{Binding GoToChatCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

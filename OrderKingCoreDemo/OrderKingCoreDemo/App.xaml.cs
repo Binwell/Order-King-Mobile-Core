@@ -1,4 +1,4 @@
-﻿using OrderKingCoreDemo.UI;
+using OrderKingCoreDemo.UI;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,9 +14,7 @@ namespace OrderKingCoreDemo
 			NavigationService.Init(this);
 			DialogService.Init(this);
 
-			MainPage = new ContentPage {
-				BackgroundColor = Color.Yellow
-			};
+			NavigationService.Instance.SetMainMasterDetailPage(Pages.Menu, Pages.HotelInfo);
 		}
 
 		protected override void OnStart ()

@@ -5,9 +5,10 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Profile.ProfilePage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="Profile"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<Label Text="Profile" />
+			<Button Text="NotificationList" Command="{Binding GoToNotificationListCommand}"/>
+			<Button Text="ProfileEdit" Command="{Binding GoToProfileEditCommand}"/>
+			<Button Text="OrderHistory" Command="{Binding GoToOrderHistoryCommand}"/>
+		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

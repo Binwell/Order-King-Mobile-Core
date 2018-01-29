@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Profile.NotificationListPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="NotificationList"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="NotificationList" />
+			<Button Text="NotificationInfo" Command="{Binding GoToNotificationInfoCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

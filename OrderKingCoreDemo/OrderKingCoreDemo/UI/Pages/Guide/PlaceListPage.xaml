@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Guide.PlaceListPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="PlaceList"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="PlaceList"/>
+			<Button Text="PlaceInfo" Command="{Binding GoToPlaceInfoCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

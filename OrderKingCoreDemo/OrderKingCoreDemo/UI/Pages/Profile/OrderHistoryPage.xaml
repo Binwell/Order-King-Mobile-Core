@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Profile.OrderHistoryPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="OrderHistory"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<Label Text="OrderHistory" />
+			<Button Text="OrderInfo" Command="{Binding GoToOrderInfoCommand}"/>
+		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

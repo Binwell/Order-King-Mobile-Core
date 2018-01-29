@@ -54,7 +54,6 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 		public CancellationToken CancellationToken => _networkTokenSource?.Token ?? CancellationToken.None;
 
 		public ICommand GoBackCommand => MakeCommand(GoBackCommandExecute);
-		public ICommand GoToPageCommand => MakeCommand(GoToPageCommandExecute);
 
 		public BaseViewModel() {
 			_classShortName = GetType().Name.Replace(@"ViewModel", "");
@@ -127,7 +126,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 				});
 		}
 
-		protected static ICommand GetNavigateToCommand(object toName,
+		protected static ICommand MakeNavigateToCommand(object toName,
 			NavigationMode mode = NavigationMode.Normal,
 			string toTitle = null,
 			bool newNavigationStack = false,
@@ -162,13 +161,6 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 		void GoBackCommandExecute() {
 			NavigateBack(NavigationMode);
 		}
-
-		void GoToPageCommandExecute(object obj) {
-			var page = obj as Pages?;
-			if (page != null)
-				NavigateTo(page, NavigationMode.Normal, withAnimation: false, withBackButton: true);
-		}
-		
 
 		protected void ShowLoading(string message = null, bool useDelay = true) {
 			MessageBus.SendMessage(Consts.DialogShowLoadingMessage, message);

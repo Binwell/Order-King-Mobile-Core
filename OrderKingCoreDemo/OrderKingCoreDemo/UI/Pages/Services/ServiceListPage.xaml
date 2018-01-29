@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Services.ServiceListPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="ServiceListPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="ServiceListPage" />
+			<Button Text="ServiceOrder" Command="{Binding GoToServiceOrderCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

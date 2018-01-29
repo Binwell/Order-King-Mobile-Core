@@ -1,6 +1,8 @@
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace OrderKingCoreDemo.Droid
 {
@@ -14,7 +16,9 @@ namespace OrderKingCoreDemo.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+	        UserDialogs.Init(() => (Activity)Forms.Context);
+
+			Forms.Init(this, bundle);
             LoadApplication(new App());
         }
     }

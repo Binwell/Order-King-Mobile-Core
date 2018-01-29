@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Guide.GuideCategoriesPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="GuideCategories"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<Label Text="GuideCategories"/>
+			<Button Text="PlaceList" Command="{Binding GoToPlaceListCommand}"/>
+		</StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

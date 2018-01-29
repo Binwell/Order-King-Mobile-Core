@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Fitness.FitnessListPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="FitnessListPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="FitnessListPage" />
+			<Button Text="FitnessOrder" Command="{Binding GoToFitnessOrderCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

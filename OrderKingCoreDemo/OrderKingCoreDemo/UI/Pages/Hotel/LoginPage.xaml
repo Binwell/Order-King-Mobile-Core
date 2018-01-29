@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Hotel.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="LoginPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="LoginPage"/>
+			<Button Text="HotelInfo" Command="{Binding GoToHotelInfoCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

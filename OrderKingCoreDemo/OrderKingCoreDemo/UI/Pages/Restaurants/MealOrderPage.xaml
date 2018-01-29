@@ -5,9 +5,8 @@
              x:Class="OrderKingCoreDemo.UI.Pages.Restaurants.MealOrderPage">
     <ContentPage.Content>
         <StackLayout>
-			<Label Text="MealOrderPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+			<Label Text="MealOrderPage"/>
+			<Button Text="Cart" Command="{Binding GoToCartCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>
