@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OrderKingCoreDemo.DAL\OrderKingCoreDemo.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="UI\Pages\Chat\ChatCategoriesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
