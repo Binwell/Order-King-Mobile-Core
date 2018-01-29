@@ -23,7 +23,6 @@ SOFTWARE. */
 using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using OrderKingCoreDemo.Annotations;
 
 namespace OrderKingCoreDemo.Helpers {
 	public class Bindable : INotifyPropertyChanged, INotifyPropertyChanging {
