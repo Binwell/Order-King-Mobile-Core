@@ -1,0 +1,16 @@
+﻿{
+	"HotelId": 1,
+	"DateIn": "2017-10-06T00:00:00+04:00",
+	"DateOut": "2017-10-22T00:00:00+04:00",
+	"RoomNumber": 1204,
+		"User": {
+				"Id": 1,
+				"FirstName": "Иван",
+				"MiddleName": "Иванович",
+				"LastName": "Иванов",
+				"Phone": "89607591111",
+				"Email": "test@test.com",
+				"Gender": "Male",
+				"Birthday": "1992-10-12T00:00:00+04:00"
+		}
+}

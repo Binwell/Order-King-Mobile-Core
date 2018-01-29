@@ -1,0 +1,23 @@
+﻿{
+		"Values": [
+				{
+					"Id": 1,
+					"Name": "Английский завтрак",
+					"Recipe": "",
+					"ImageUrl": "http://lorempixel.com/360/220/food/",
+					"Description": "Помидоры, яйца, зелень, ветчина",
+					"Discount": 10,
+					"Price": 90,
+					"OldPrice": 100,
+					"MealOptions": [
+						{
+							"Id": 1,
+							"Name": "На одного",
+							"Price": 90,
+							"OldPrice": 100,
+							"Discount": 10
+						}
+					]
+				}
+		]
+}

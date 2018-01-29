@@ -34,8 +34,10 @@ namespace OrderKingCoreDemo.DAL.DataServices.Mock
 
 		protected async Task<RequestResult<List<T>>> GetMockDataList<T>(string fileName) where T : class
 		{
-			var result = await GetMockData<List<T>>(fileName).ConfigureAwait(false);
-			return new RequestResult<List<T>>(result.Data, result.Status, result.Message);
+			var result = await GetMockData<ValueList<T>>(fileName).ConfigureAwait(false);
+			return result.IsValid
+				? new RequestResult<List<T>>(result.Data.Values, result.Status, result.Message)
+				: new RequestResult<List<T>>(null, result.Status, result.Message);
 		}
 
 
@@ -47,6 +49,10 @@ namespace OrderKingCoreDemo.DAL.DataServices.Mock
 		
 		static Task Delay() {
 			return Task.Delay(Randomizer.Next(100, 1000));
+		}
+
+		class ValueList<T> {
+			public List<T> Values { get; set; }
 		}
 	}
 }

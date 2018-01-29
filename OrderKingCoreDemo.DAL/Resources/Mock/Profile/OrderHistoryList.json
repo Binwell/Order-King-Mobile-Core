@@ -1,0 +1,70 @@
+﻿{
+	"Values": [
+		{
+			"Id": 1,
+			"Date": "2017-09-08T00:00:00+04:00",
+			"OrderNumber": 12799807,
+			"Status": "",
+			"OrderPrice": 2000,
+			"PayMethods": [
+				{
+					"Id": 1,
+					"Name": "На счет номера 42"
+				},
+				{
+					"Id": 2,
+					"Name": "Кредитной картой"
+				}
+			],
+			"ConfirmMethods": [
+				{
+					"Id": 1,
+					"Name": "Вам перезвонят в номер"
+				}
+			],
+			"Name": "",
+			"Description": "",
+			"ImageUrl": "",
+			"Type": "",
+			"MealsInOrder": [
+				{
+					"Id": 1,
+					"Count": 1,
+					"Name": "Английский завтрак",
+					"Recipe": "",
+					"ImageUrl": "http://lorempixel.com/360/220/food/",
+					"Description": "Помидоры, яйца, зелень, ветчина",
+					"Discount": 10,
+					"Price": 90,
+					"OldPrice": 100,
+					"MealOption": {
+						"Id": 1,
+						"Name": "На одного",
+						"Price": 90,
+						"OldPrice": 100,
+						"Discount": 10
+					}
+
+				}, {
+					"Id": 2,
+					"Count": 2,
+					"Name": "Французский завтрак",
+					"Recipe": "",
+					"ImageUrl": "http://lorempixel.com/360/220/food/",
+					"Description": "Помидоры, яйца, зелень, ветчина",
+					"Discount": 30,
+					"Price": 70,
+					"OldPrice": 100,
+					"MealOption": {
+						"Id": 1,
+						"Name": "На одного",
+						"Price": 70,
+						"OldPrice": 100,
+						"Discount": 30
+					}
+
+				}
+			]
+		}
+	]
+}

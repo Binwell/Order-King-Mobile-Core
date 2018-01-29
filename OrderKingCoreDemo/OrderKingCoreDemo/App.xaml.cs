@@ -1,3 +1,4 @@
+using OrderKingCoreDemo.DAL.DataServices;
 using OrderKingCoreDemo.UI;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +14,7 @@ namespace OrderKingCoreDemo
 
 			NavigationService.Init(this);
 			DialogService.Init(this);
+			DataServices.Init(true);
 
 			NavigationService.Instance.SetMainMasterDetailPage(Pages.Menu, Pages.HotelInfo);
 		}

@@ -1,0 +1,25 @@
+{
+		"Values": [
+				{
+						"Id": 1,
+						"Name": "Уборка",
+						"ImageUrl": "http://cleaning-prof.com/sites/cleaning-prof/files/styles/manual_crop_to_620x253/public/service-type/uborka_gostinits.jpg?itok=bca9og7e&c=6c964bad3fb367cd8b10ce645d7f9f1b",
+						"Price": 200,
+						"Description": "Уборка номера"
+				},
+				{
+						"Id": 2,
+						"Name": "Химчистка",
+						"ImageUrl": "http://aistclean.ru/upload/iblock/632/63286e9957dec0563796a19681847884.jpg",
+						"Price": 200,
+						"Description": "Химичистка ваших вещей"
+				},
+				{
+						"Id": 3,
+						"Name": "Такси",
+						"ImageUrl": "https://st2.zr.ru/_ah/img/1K86oqyFN2MLwBkDlcqRqA",
+						"Price": 200,
+						"Description": "Заказ такси к отелю"
+				}
+		]
+}

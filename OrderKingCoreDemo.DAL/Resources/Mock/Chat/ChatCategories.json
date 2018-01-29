@@ -1,0 +1,20 @@
+﻿{
+	"Values": [
+		{
+			"Name": "Ресепшен",
+			"Icon": "receptionist.png"
+		},
+		{
+			"Name": "Ресторан",
+			"Icon": "restaurant.png"
+		},
+		{
+			"Name": "Техпотдержка",
+			"Icon": "support.png"
+		},
+		{
+			"Name": "Управляющий отеля",
+			"Icon": "manager.png"
+		}
+	]
+}

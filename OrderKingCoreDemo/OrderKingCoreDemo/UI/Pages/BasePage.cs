@@ -17,7 +17,7 @@ namespace OrderKingCoreDemo.UI.Pages
 		}
 
 		public void SetViewModel(BaseViewModel viewModel) {
-			BindingContext = viewModel;
+			BindingContext = BaseViewModel = viewModel;
 		}
 
 		protected override void OnAppearing() {

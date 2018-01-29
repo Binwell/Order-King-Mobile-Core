@@ -1,0 +1,24 @@
+﻿{
+	"Values": [
+		{
+			"SenderId": 1,
+			"MessageText": "Здравствуйте, мне необходимо дополнительное полотенце",
+			"Status": "Sent"
+		},
+		{
+			"SenderId": 2,
+			"MessageText": "Добрый день!\nЧерез 5 минут Вам принесут дополнительное полотенце.",
+			"Status": "Received"
+		},
+		{
+			"SenderId": 1,
+			"MessageText": "Спасибо!",
+			"Status": "Sent"
+		},
+		{
+			"SenderId": 2,
+			"MessageText": "Пожалуйста!\nВсегда рады помочь!",
+			"Status": "Received"
+		}
+	]
+}

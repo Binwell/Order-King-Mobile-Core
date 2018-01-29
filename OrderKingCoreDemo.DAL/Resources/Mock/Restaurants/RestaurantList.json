@@ -1,0 +1,90 @@
+﻿{
+		"Values": [
+				{
+						"ID": 1,
+						"Name": "Бар \" South Porth\"",
+						"ImageUrl": "https://lh4.googleusercontent.com/proxy/853kBpVdHXYFosL4FhTAT0G7_omCcxVPHh_iHSIYg3zV6pgawuYao5ET18cpYVV0P9JZJzEUUnbhRBStbk3_aBhDekUOzuA4ZjEKrSFTaGu8p2yzT57m3q-NkZyzTGMIeAvDhHJOEBu8UdWt6dkyyit7QstJCZo=w408-h544-k-no",
+						"Description": "",
+						"Address": "г. Воронеж ул. Моисеева д. 10",
+						"Telephone": "+7 (473) 2-545-74-54",
+						"Latitude": 51.6531,
+						"Longitude": 39.1805,
+						"Feature": "Заказ в номер",
+						"MenuCategoryList": [
+								{
+										"Id":1,
+										"Name": "Алкогольные напитки"
+								},
+								{
+										"Id":2,
+										"Name": "Безалкогольные напитки"
+								},
+								{
+										"Id":3,
+										"Name": "Закуски"
+								}
+						]
+				},
+				{
+						"ID": 2,
+						"Name": "Ресторан \"Divine\"",
+						"ImageUrl": "https://lh4.googleusercontent.com/proxy/853kBpVdHXYFosL4FhTAT0G7_omCcxVPHh_iHSIYg3zV6pgawuYao5ET18cpYVV0P9JZJzEUUnbhRBStbk3_aBhDekUOzuA4ZjEKrSFTaGu8p2yzT57m3q-NkZyzTGMIeAvDhHJOEBu8UdWt6dkyyit7QstJCZo=w408-h544-k-no",
+						"Description": "",
+						"Address": "г. Воронеж ул. Моисеева д. 10",
+						"Telephone": "+7 (473) 2-545-74-54",
+						"Latitude": 51.6531,
+						"Longitude": 39.1805,
+						"Feature": "Заказ в номер",
+						"MenuCategoryList": [
+								{
+										"Id":4,
+										"Name": "Завтраки"
+								},
+								{
+										"Id":5,
+										"Name": "Обеды"
+								},
+								{
+										"Id":6,
+										"Name": "Напитки"
+								}
+						]
+				},
+				{
+						"ID": 3,
+						"Name": "Кафе \"Балаган Сити\"",
+						"ImageUrl": "https://lh4.googleusercontent.com/proxy/853kBpVdHXYFosL4FhTAT0G7_omCcxVPHh_iHSIYg3zV6pgawuYao5ET18cpYVV0P9JZJzEUUnbhRBStbk3_aBhDekUOzuA4ZjEKrSFTaGu8p2yzT57m3q-NkZyzTGMIeAvDhHJOEBu8UdWt6dkyyit7QstJCZo=w408-h544-k-no",
+						"Description": "",
+						"Address": "г. Воронеж ул. Моисеева д. 10",
+						"Telephone": "+7 (473) 2-545-74-54",
+						"Latitude": 51.6531,
+						"Longitude": 39.1805,
+						"Feature": "",
+						"MenuCategoryList": []
+				},
+				{
+						"ID": 4,
+						"Name": "Кафе \"Travel Cafe\"",
+						"ImageUrl": "",
+						"Description": "",
+						"Address": "г. Воронеж ул. Моисеева д. 10",
+						"Telephone": "+7 (473) 2-545-74-54",
+						"Latitude": 51.6531,
+						"Longitude": 39.1805,
+						"Feature": "",
+						"MenuCategoryList": []
+				},
+				{
+						"ID": 5,
+						"Name": "Ресторан \"The Pirate\"",
+						"ImageUrl": "",
+						"Description": "",
+						"Address": "г. Воронеж ул. Моисеева д. 10",
+						"Telephone": "+7 (473) 2-545-74-54",
+						"Latitude": 51.6531,
+						"Longitude": 39.1805,
+						"Feature": "",
+						"MenuCategoryList": []
+				}
+		]
+}

@@ -1,0 +1,69 @@
+﻿{
+	"Values": [
+		{
+			"Id": 1,
+			"Name": "Памятник Белому\nБиму",
+			"Description": "Памятник Белому Биму возле кукольного театра",
+			"ImageUrl":
+				"https://lh4.googleusercontent.com/proxy/853kBpVdHXYFosL4FhTAT0G7_omCcxVPHh_iHSIYg3zV6pgawuYao5ET18cpYVV0P9JZJzEUUnbhRBStbk3_aBhDekUOzuA4ZjEKrSFTaGu8p2yzT57m3q-NkZyzTGMIeAvDhHJOEBu8UdWt6dkyyit7QstJCZo=w408-h544-k-no",
+			"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png",
+			"Address": "пр. Революции, 48",
+			"Longitude": 51.6594225,
+			"Latitude": 39.2063828,
+			"Telephone": "+79123456789",
+			"WorkTime": "Круглосуточно"
+		},
+		{
+			"Id": 2,
+			"Name": "Тануки",
+			"Description": "",
+			"ImageUrl":
+				"https://lh5.googleusercontent.com/proxy/GegB2E0x2-XUmWV_OQKiXksrz-mmXWyoZYSvF1ce1VMioxq4kKKmKbxlCnmWxCetc3uW1f76_c_kKxX4y1ekiVdf0RPugEJHYg28_p48dWl3Ow_wdqx2dtdoXhqTOkLDnmsQYadAystT5XPK7x1SICekZkWpcv0=w408-h306-k-no",
+			"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png",
+			"Address": "ул. Фридриха Энгельса, 7",
+			"Longitude": 51.7068366,
+			"Latitude": 39.1022439,
+			"Telephone": "8 (473) 239-58-78",
+			"WorkTime": "с 11:30 до 00:00"
+		},
+		{
+			"Id": 3,
+			"Name": "Котёнок с ул. Лизюкова",
+			"Description": "Знаменитый Котёнок с ул. Лизюкова из одноименного мультфильма режиссера Вячеслава Котёночкина",
+			"ImageUrl":
+				"https://lh6.googleusercontent.com/proxy/RyzwBBHwDBqM7d31GdheMKrN4oGCWbk5KXbY_mgCUF_8V_ZDDR_zL4iFA7lsncroBjg8I_B8x6f6-nxqJKVKmtnbuqzp2tV1Wyq__Ta2ZCThbs7vpMNDvs1fvO864XVLoL_BD_nV_XCCUHKKm7ywx0QqqmQiUvA=w408-h305-k-no",
+			"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png",
+			"Address": "ул. Генерала Лизюкова, 4",
+			"Longitude": 51.7069004,
+			"Latitude": 39.1547738,
+			"Telephone": "+79123456789",
+			"WorkTime": "Круглосуточно"
+		},
+		{
+			"Id": 4,
+			"Name": "Балаган Сити",
+			"Description":
+				"Еженедельные дегустации блюд от шеф-повара становятся доброй традицией! Разгар лета порадует воронежцев аппетитным лакомством –  запечённой свиной ножкой от «Балаган Сити». Гости смогут отведать не только сочное мясо, но и другой подарок от ресторана – бокал веселящего напитка.",
+			"ImageUrl": "https://lh5.googleusercontent.com/p/AF1QipMtxXE1Xo3dJ9A0Q9YSmR3ihgXUgUaeKR_VJYOC=w408-h306-k-no",
+			"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png",
+			"Address": "Центр Галереи Чижова, ул. Кольцовская, 35",
+			"Longitude": 51.706795,
+			"Latitude": 39.1022439,
+			"Telephone": "8 (473) 233-22-33",
+			"WorkTime": "с 12:00 до 1:00"
+		},
+		{
+			"Id": 5,
+			"Name": "Воронежский Планетарий",
+			"Description": "",
+			"ImageUrl":
+				"https://lh4.googleusercontent.com/proxy/Plj6t2yx3KC8K9P2zOaW2seUE-IAqV-sPdbHZ62Cmw3yVrfHVz3IC2RnkFa9OVUHDjIXZCuYnBDoTD5DD2cnajW4Ka6y7u2tF7WKADoYG40A7XHcicU9xY1_615xlnc64x8ieiZE7gaMixcgHdG_ylACKeXfh8I=w408-h305-k-no",
+			"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png",
+			"Address": "ул. Генерала Лизюкова, 60, ТЦ \"Аксиома\"",
+			"Longitude": 51.7067534,
+			"Latitude": 39.1022438,
+			"Telephone": "8 (961) 188-88-89",
+			"WorkTime": "с 11:00 до 21:00"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+﻿{
+		"Id": 1,
+		"Name": "Kings Presidint",
+		"Description": "Отдых по высшему разряду. All Inclusive. Всё о чем вы могли желать и даже больше!",
+		"Address": "ул. Ленина 3",
+		"Phone": "+7 111 222-33-46",
+		"Coordinates": {
+				"Latitude": 39.198297,
+				"Longitude": 51.662435
+		},
+		"ImageUrl": "http://pix10.agoda.net/hotelImages/692/69232/69232_14012115100018116356.jpg?s=1024x768",
+		"LogoUrl": "https://static.tildacdn.com/tild3365-3232-4635-a231-616663366166/binwell.png"
+}

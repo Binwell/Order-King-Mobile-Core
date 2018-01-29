@@ -1,0 +1,25 @@
+﻿{
+		"Values": [
+				{
+						"Id": 1,
+						"Name": "Русская баня",
+						"ImageUrl": "https://atlantik-plus.ru/sites/default/files/imce/sauna/img_0107.jpg",
+						"Price": 2500,
+						"Description": "Заказ Русской бани на дровах, с парилкой рассчитаной до 6 чеолвек"
+				},
+				{
+						"Id": 2,
+						"Name": "Фитнес-зал",
+						"ImageUrl": "https://pp.userapi.com/c841225/v841225225/1d699/9Xw86Z-mkno.jpg",
+						"Price": 2000,
+						"Description": "Посещение фитнес-зала для активного отдыха."
+				},
+				{
+						"Id": 3,
+						"Name": "Спа процедуры",
+						"ImageUrl": "https://nebolet.com/medimg//content//spa-procedury-1.jpg",
+						"Price": 1500,
+						"Description": "Заказ такси к отелю"
+				}
+		]
+}

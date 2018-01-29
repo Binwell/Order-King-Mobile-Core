@@ -5,7 +5,39 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Remove="Resources\Mock\Chat\ChatCategories.json" />
+    <None Remove="Resources\Mock\Chat\ChatMessages.json" />
+    <None Remove="Resources\Mock\Fitness\FitnessList.json" />
+    <None Remove="Resources\Mock\Guide\GuideCategories.json" />
+    <None Remove="Resources\Mock\Guide\GuidePlaces.json" />
+    <None Remove="Resources\Mock\Hotel\HotelGroupInfo.json" />
+    <None Remove="Resources\Mock\Hotel\HotelInfo.json" />
+    <None Remove="Resources\Mock\Hotel\Profile.json" />
+    <None Remove="Resources\Mock\Profile\NotificationList.json" />
+    <None Remove="Resources\Mock\Profile\OrderHistoryList.json" />
+    <None Remove="Resources\Mock\Restaurants\Meal.json" />
+    <None Remove="Resources\Mock\Restaurants\Meals.json" />
+    <None Remove="Resources\Mock\Restaurants\RestaurantInfo.json" />
+    <None Remove="Resources\Mock\Restaurants\RestaurantList.json" />
+    <None Remove="Resources\Mock\Services\ServiceList.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Mock\Chat\ChatCategories.json" />
+    <EmbeddedResource Include="Resources\Mock\Chat\ChatMessages.json" />
+    <EmbeddedResource Include="Resources\Mock\Fitness\FitnessList.json" />
+    <EmbeddedResource Include="Resources\Mock\Guide\GuideCategories.json" />
+    <EmbeddedResource Include="Resources\Mock\Guide\GuidePlaces.json" />
+    <EmbeddedResource Include="Resources\Mock\Hotel\HotelGroupInfo.json" />
+    <EmbeddedResource Include="Resources\Mock\Hotel\HotelInfo.json" />
+    <EmbeddedResource Include="Resources\Mock\Hotel\Profile.json" />
+    <EmbeddedResource Include="Resources\Mock\Profile\NotificationList.json" />
+    <EmbeddedResource Include="Resources\Mock\Profile\OrderHistoryList.json" />
+    <EmbeddedResource Include="Resources\Mock\Restaurants\Meal.json" />
+    <EmbeddedResource Include="Resources\Mock\Restaurants\Meals.json" />
+    <EmbeddedResource Include="Resources\Mock\Restaurants\RestaurantInfo.json" />
+    <EmbeddedResource Include="Resources\Mock\Restaurants\RestaurantList.json" />
+    <EmbeddedResource Include="Resources\Mock\Services\ServiceList.json" />
   </ItemGroup>
 
   <ItemGroup>

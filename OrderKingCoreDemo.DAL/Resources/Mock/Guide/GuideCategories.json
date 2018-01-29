@@ -1,0 +1,22 @@
+﻿{
+		"Values": [
+				{
+						"Id": 1,
+						"Name": "Достопремичательности",
+						"Description": "Все, на что интересно посмотреть в нашем городе",
+						"ImageUrl": "http://lorempixel.com/360/220/city/"
+				},
+				{
+						"Id": 2,
+						"Name": "Рестораны и бары",
+						"Description": "Самые роскошные и торжественные рестораны, бары",
+						"ImageUrl": "http://lorempixel.com/360/220/city/"
+				},
+				{
+						"Id": 3,
+						"Name": "Торговые центры",
+						"Description": "Самые большие торговые центры",
+						"ImageUrl": "http://lorempixel.com/360/220/city/"
+				}
+		]
+}
