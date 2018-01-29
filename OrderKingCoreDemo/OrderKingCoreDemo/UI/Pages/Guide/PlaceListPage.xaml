@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:OrderKingCoreDemo.UI.Pages;assembly=OrderKingCoreDemo"
+             x:Class="OrderKingCoreDemo.UI.Pages.Guide.PlaceListPage">
+    <ContentPage.Content>
+        <StackLayout>
+			<Label Text="PlaceList"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</pages:BasePage>
