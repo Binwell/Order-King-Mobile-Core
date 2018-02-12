@@ -11,6 +11,8 @@ Step 5. Add Data Objects
 Step 6. Add DAL methods  
 Step 6.5. Add Mock Data  
 
-Here is a screen map we used as a base for implementing project structure  
+Here is a screen map we used as a base for implementing project structure.
+
+*NOTE: This navigation map was created by middle developer as is for the very first time in his life.*   
 
 ![Screen Map](OrderKingScreenMap.png "Screen Map")
