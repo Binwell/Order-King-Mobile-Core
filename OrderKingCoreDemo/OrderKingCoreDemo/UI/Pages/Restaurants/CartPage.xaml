@@ -2,6 +2,7 @@
 <pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:OrderKingCoreDemo.UI.Pages;assembly=OrderKingCoreDemo"
+             xmlns:orderKingCoreDemo="clr-namespace:OrderKingCoreDemo;assembly=OrderKingCoreDemo"
              x:Class="OrderKingCoreDemo.UI.Pages.Restaurants.CartPage">
         <StackLayout>
 			<Label Text="CartPage"
@@ -9,6 +10,6 @@
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
 	<pages:BasePage.ToolbarItems>
-		<ToolbarItem Text="Close" Command="{Binding GoBackCommand}"/>
+		<ToolbarItem Text="Close" Command="{Binding GoBackCommand}" CommandParameter="{x:Static orderKingCoreDemo:NavigationMode.Modal}"/>
 	</pages:BasePage.ToolbarItems>
 </pages:BasePage>
