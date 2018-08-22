@@ -12,12 +12,10 @@ namespace OrderKingCoreDemo
 		{
 			InitializeComponent();
 
-			NavigationService.Init(this);
 			DialogService.Init(this);
 			DataServices.Init(true);
-
-			NavigationService.Instance.SetMainMasterDetailPage(Pages.Menu, Pages.HotelInfo);
-		}
+			NavigationService.Init(Pages.HotelInfo);
+ 		}
 
 		protected override void OnStart ()
 		{

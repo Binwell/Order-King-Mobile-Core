@@ -34,11 +34,8 @@ using Xamarin.Forms;
 
 namespace OrderKingCoreDemo.BL.ViewModels {
 	public class BaseViewModel : Bindable, IDisposable {
-		readonly string _classShortName;
 		readonly CancellationTokenSource _networkTokenSource = new CancellationTokenSource();
 		readonly ConcurrentDictionary<string, ICommand> _cachedCommands = new ConcurrentDictionary<string, ICommand>();
-
-		public NavigationMode NavigationMode { get; set; }
 
 		protected Dictionary<string, object> NavigationParams {
 			get { return Get<Dictionary<string, object>>(); }
@@ -54,11 +51,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 		public CancellationToken CancellationToken => _networkTokenSource?.Token ?? CancellationToken.None;
 
 		public ICommand GoBackCommand => MakeCommand(GoBackCommandExecute);
-
-		public BaseViewModel() {
-			_classShortName = GetType().Name.Replace(@"ViewModel", "");
-		}
-
+ 
 		public void Dispose() {
 			Dispose(true);
 			GC.SuppressFinalize(this);
@@ -89,18 +82,8 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			return Task.FromResult(0);
 		}
 
-		protected void NavigateTo(object toName,
-			NavigationMode mode = NavigationMode.Normal,
-			string toTitle = null,
-			Dictionary<string, object> navParams = null,
-			bool newNavigationStack = false,
-			bool withAnimation = true,
-			bool withBackButton = false,
-			object fromName = null) {
-			NavigateTo(toName, fromName ?? _classShortName, mode, toTitle, navParams, newNavigationStack, withAnimation, withBackButton);
-		}
-
-		protected static void NavigateTo(object toName,
+		
+		protected static Task<bool> NavigateTo(object toName,
 			object fromName,
 			NavigationMode mode = NavigationMode.Normal,
 			string toTitle = null,
@@ -109,21 +92,19 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			bool withAnimation = true,
 			bool withBackButton = false) {
 
-			if (toName == null) return;
-
 			MessageBus.SendMessage(Consts.DialogHideLoadingMessage);
 
+			var completedTask = new TaskCompletionSource<bool>();
 			MessageBus.SendMessage(Consts.NavigationPushMessage,
 				new NavigationPushInfo {
 					To = toName.ToString(),
 					From = fromName?.ToString(),
 					Mode = mode,
 					NavigationParams = dataToLoad,
-					ToTitle = toTitle,
 					NewNavigationStack = newNavigationStack,
-					WithAnimation = withAnimation,
-					WithBackButton = withBackButton
+					OnCompletedTask = completedTask,
 				});
+			return completedTask.Task;
 		}
 
 		protected static ICommand MakeNavigateToCommand(object toName,
@@ -144,22 +125,26 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			return GetCommand(propertyName) ?? SaveCommand(new Command(commandAction), propertyName);
 		}
 
-		protected void NavigateBack(NavigationMode mode = NavigationMode.Normal, bool withAnimation = true, bool force = false) {
+		protected Task<bool> NavigateBack(NavigationMode mode = NavigationMode.Normal, bool withAnimation = true, bool force = false) {
 			ClearDialogs();
-
+			var taskCompletionSource = new TaskCompletionSource<bool>();
 			MessageBus.SendMessage(Consts.NavigationPopMessage, new NavigationPopInfo {
 				Mode = mode,
-				WithAnimation = withAnimation,
-				Force = force
+				OnCompletedTask = taskCompletionSource
 			});
+			return taskCompletionSource.Task;
 		}
 
 		public void ClearDialogs() {
 			HideLoading();
 		}
 
-		void GoBackCommandExecute() {
-			NavigateBack(NavigationMode);
+		void GoBackCommandExecute(object mode) {
+			if (mode is NavigationMode navigationMode) {
+				NavigateBack(navigationMode);
+				return;
+			}
+			NavigateBack();
 		}
 
 		protected void ShowLoading(string message = null, bool useDelay = true) {
@@ -249,6 +234,10 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			return _cachedCommands.TryGetValue(propertyName, out var cachedCommand)
 				? cachedCommand
 				: null;
+		}
+		//override this method for setted viewmodel properties before page apearing
+		public virtual void SetDataToLoad(Dictionary<string, object> navigationParams) {
+			NavigationParams = navigationParams;
 		}
 	}
 }

@@ -6,19 +6,20 @@ using Xamarin.Forms;
 namespace OrderKingCoreDemo.UI.Pages
 {
 	public class BasePage : ContentPage, IDisposable {
-		protected BaseViewModel BaseViewModel { get; private set; }
+		protected BaseViewModel BaseViewModel => BindingContext as BaseViewModel;
 
-		~BasePage() {
-			Dispose();
-		}
-
+		
 		public void Dispose() {
 			BaseViewModel?.Dispose();
 		}
 
-		public void SetViewModel(BaseViewModel viewModel) {
-			BindingContext = BaseViewModel = viewModel;
+		protected override void OnParentSet() {
+			base.OnParentSet();
+			if (Parent == null) {
+				Dispose();
+			}
 		}
+
 
 		protected override void OnAppearing() {
 			base.OnAppearing();
