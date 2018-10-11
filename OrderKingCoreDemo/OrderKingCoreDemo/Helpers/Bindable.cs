@@ -43,9 +43,11 @@ namespace OrderKingCoreDemo.Helpers {
 		}
 
 		protected T Get<T>(T defValue = default(T), [CallerMemberName] string name = null) {
-			return !string.IsNullOrEmpty(name) && _properties.TryGetValue(name, out var value)
-				       ? (T)value
-				       : defValue;
+			if (string.IsNullOrEmpty(name)) return defValue;
+			if (_properties.TryGetValue(name, out var value))
+				return (T) value;
+			_properties.AddOrUpdate(name, defValue, (s, o) => defValue);
+			return defValue;
 		}
 
 		protected bool Set(object value, [CallerMemberName] string name = null) {
