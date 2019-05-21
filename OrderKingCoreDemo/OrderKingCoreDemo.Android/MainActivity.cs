@@ -2,7 +2,6 @@ using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using OrderKingCoreDemo.Droid.Resources;
 using Xamarin.Forms;
 
 namespace OrderKingCoreDemo.Droid
