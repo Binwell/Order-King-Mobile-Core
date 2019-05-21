@@ -36,15 +36,23 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 	public class BaseViewModel : Bindable, IDisposable {
 		readonly CancellationTokenSource _networkTokenSource = new CancellationTokenSource();
 		readonly ConcurrentDictionary<string, ICommand> _cachedCommands = new ConcurrentDictionary<string, ICommand>();
-
-		protected Dictionary<string, object> NavigationParams {
-			get { return Get<Dictionary<string, object>>(); }
-			private set { Set(value); }
+		
+		public Dictionary<string, object> NavigationParams {
+			get => Get<Dictionary<string, object>>();
+			private set {
+				Set(value);
+				OnSetNavigationParams(value ?? new Dictionary<string, object>());
+			}
 		}
 
 		public PageState State {
 			get => Get(PageState.Clean);
 			set => Set(value);
+		}
+		
+		public bool IsLoadDataStarted {
+			get => Get<bool>();
+			protected internal set => Set(value);
 		}
 
 		public bool IsConnected => !CrossConnectivity.IsSupported || CrossConnectivity.IsSupported && CrossConnectivity.Current.IsConnected;
@@ -78,16 +86,32 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			return Task.FromResult(0);
 		}
 
-		public virtual Task OnPageDissapearing() {
+		public virtual Task OnPageDisappearing() {
 			return Task.FromResult(0);
 		}
 
-		
+		public void StartLoadData() {
+			if (IsLoadDataStarted) return;
+			IsLoadDataStarted = true;
+
+			Task.Run(LoadDataAsync, CancellationToken);
+		}
+
+		//override this method for load data
+		protected virtual Task LoadDataAsync() {
+			return Task.FromResult(0);
+		}
+
+		//override this method for sets viewmodel properties before page appearing
+		public virtual void OnSetNavigationParams(Dictionary<string, object> navigationParams) {
+			// do nothing
+		}
+
 		protected static Task<bool> NavigateTo(object toName,
 			object fromName,
 			NavigationMode mode = NavigationMode.Normal,
 			string toTitle = null,
-			Dictionary<string, object> dataToLoad = null,
+			Dictionary<string, object> navParams = null,
 			bool newNavigationStack = false,
 			bool withAnimation = true,
 			bool withBackButton = false) {
@@ -100,7 +124,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 					To = toName.ToString(),
 					From = fromName?.ToString(),
 					Mode = mode,
-					NavigationParams = dataToLoad,
+					NavigationParams = navParams,
 					NewNavigationStack = newNavigationStack,
 					OnCompletedTask = completedTask,
 				});
@@ -234,10 +258,6 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			return _cachedCommands.TryGetValue(propertyName, out var cachedCommand)
 				? cachedCommand
 				: null;
-		}
-		//override this method for setted viewmodel properties before page apearing
-		public virtual void SetDataToLoad(Dictionary<string, object> navigationParams) {
-			NavigationParams = navigationParams;
 		}
 	}
 }

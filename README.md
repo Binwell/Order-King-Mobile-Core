@@ -11,12 +11,14 @@ Step 5. Add Data Objects
 Step 6. Add DAL methods  
 Step 6.5. Add Mock Data  
 
-Here is a screen map we used as a base for implementing project structure.
-
 Here a guide used to create a project structure: [Guide "Software Design of Mobile Applications"](https://books.binwell.com/software-design-of-mobile-applications/)
 
 Here is a link video with [detailed explanation (in Russian)](https://www.youtube.com/watch?v=KGKlIimwOaI)
 
+You can see ViewModel sample [in this file](OrderKingCoreDemo/OrderKingCoreDemo/BL/ViewModels/Hotel/HotelInfoViewModel.cs)
+
+
+Here is a screen map we used as a base for implementing project structure.
 *NOTE: This navigation map was created by middle developer as is for the very first time in his life.*   
 
 ![Screen Map](OrderKingScreenMap.png "Screen Map")

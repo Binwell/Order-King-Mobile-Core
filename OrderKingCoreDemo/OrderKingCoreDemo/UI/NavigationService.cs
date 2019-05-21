@@ -251,11 +251,11 @@ namespace OrderKingCoreDemo.UI
 													 ti.BaseType.Name.Contains(@"ViewModel"))
 										.ToDictionary(GetTypeBaseName, ti => ti.AsType());
 		}
-	    BasePage GetInitializedPage(string toName, Dictionary<string, object> dataToLoad = null)
-		{
+
+		BasePage GetInitializedPage(string toName, Dictionary<string, object> navParams = null) {
 			var page = GetPage(toName);
 			var viewModel = GetViewModel(toName);
-			viewModel.SetDataToLoad(dataToLoad);
+			viewModel.SetNavigationParams(navParams);
 			page.BindingContext = viewModel;
 			return page;
 		}

@@ -25,8 +25,10 @@ namespace OrderKingCoreDemo.UI.Pages
 			base.OnAppearing();
 			Task.Run(async () => {
 				await Task.Delay(50); // Allow UI to handle events loop
-				if (BaseViewModel != null)
+				if (BaseViewModel != null) {
 					await BaseViewModel.OnPageAppearing();
+					BaseViewModel.StartLoadData();
+				}
 			});
 		}
 
@@ -35,7 +37,7 @@ namespace OrderKingCoreDemo.UI.Pages
 			Task.Run(async () => {
 				await Task.Delay(50); // Allow UI to handle events loop
 				if (BaseViewModel != null)
-					await BaseViewModel.OnPageDissapearing();
+					await BaseViewModel.OnPageDisappearing();
 			});
 		}
 
