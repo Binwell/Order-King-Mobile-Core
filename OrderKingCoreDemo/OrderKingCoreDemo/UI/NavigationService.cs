@@ -47,25 +47,27 @@ namespace OrderKingCoreDemo.UI
 			MessagingCenter.Subscribe<MessageBus, NavigationPushInfo>(this, Consts.NavigationPushMessage, NavigationPushCallback);
 			MessagingCenter.Subscribe<MessageBus, NavigationPopInfo>(this, Consts.NavigationPopMessage, NavigationPopCallback);
 		}
-	    public static void Init(OrderKingCoreDemo.Pages detail)
+	    public static Task Init(OrderKingCoreDemo.Pages page)
 	    {
-	        Instance.Initialize(detail);
+	        return Instance.Initialize(page);
 	    }
 
-	    void Initialize(OrderKingCoreDemo.Pages page)
+	    Task Initialize(OrderKingCoreDemo.Pages page)
 	    {
+		    var tks = new TaskCompletionSource<bool>();
 			var initPage  = GetInitializedPage(page.ToString());
-		    RootPush(initPage);
+		    RootPush(initPage, tks);
+		    return tks.Task;
 	    }
 
-	 
+
 		public static NavigationService Instance => LazyInstance.Value;
- 
+
 		void NavigationPushCallback(MessageBus bus, NavigationPushInfo navigationPushInfo)
 		{
 			if (navigationPushInfo == null) throw new ArgumentNullException(nameof(navigationPushInfo));
 			if (string.IsNullOrEmpty(navigationPushInfo.To)) throw new FieldAccessException(@"'To' page value should be set");
-		
+
 		    Push(navigationPushInfo);
 		}
 
@@ -74,7 +76,7 @@ namespace OrderKingCoreDemo.UI
 			if (navigationPopInfo == null) throw new ArgumentNullException(nameof(navigationPopInfo));
 		    Pop(navigationPopInfo);
 		}
-        
+
 		#region NavigationService internals
 
 		INavigation GetTopNavigation() {
@@ -106,6 +108,9 @@ namespace OrderKingCoreDemo.UI
 				case NavigationMode.RootPage:
 					RootPush(newPage, pushInfo.OnCompletedTask);
 					break;
+	            case NavigationMode.Master:
+		            MasterPush(newPage, pushInfo.OnCompletedTask);
+		            break;
 		        case NavigationMode.Custom:
 					CustomPush(newPage, pushInfo.OnCompletedTask);
 			        break;
@@ -113,7 +118,24 @@ namespace OrderKingCoreDemo.UI
 	                throw new NotImplementedException();
 	        }
 	    }
-		void NormalPush(Page newPage, TaskCompletionSource<bool> completed)
+
+	    void RootPush(Page newPage, TaskCompletionSource<bool> pushInfoOnCompletedTask)
+	    {
+		    Device.BeginInvokeOnMainThread(() =>
+		    {
+			    try
+			    {
+				    Application.Current.MainPage = new NavigationPage(newPage);
+				    pushInfoOnCompletedTask.SetResult(true);
+			    }
+			    catch
+			    {
+				    pushInfoOnCompletedTask.SetResult(false);
+			    }
+		    });
+	    }
+
+	    void NormalPush(Page newPage, TaskCompletionSource<bool> completed)
 		{
 			Device.BeginInvokeOnMainThread(async () =>
 			{
@@ -144,21 +166,9 @@ namespace OrderKingCoreDemo.UI
 				}
 			});
 		}
-		void RootPush(Page newPage, TaskCompletionSource<bool> pushInfoOnCompletedTask = null) {
+		void MasterPush(Page newPage, TaskCompletionSource<bool> pushInfoOnCompletedTask = null) {
 			Device.BeginInvokeOnMainThread(async () => {
 				try {
-					if (Application.Current.MainPage == null) {
-						var masterPage = GetInitializedPage(OrderKingCoreDemo.Pages.Menu.ToString());
-						//Xamarin.Forms return exception when master page title is null
-						//this title not visible in app
-						masterPage.Title = nameof(masterPage);
-						var detailPage = new NavigationPage(newPage);
-						Application.Current.MainPage = new MasterDetailPage {
-							Master = masterPage,
-							Detail = detailPage
-						};
-					}
-					else
 					if (Application.Current.MainPage is MasterDetailPage mp) {
 						mp.IsPresented = false;
 						await Task.Delay(250);
@@ -170,8 +180,19 @@ namespace OrderKingCoreDemo.UI
 								await navigation.PopToRootAsync();
 							}
 						}
-					 
 						pushInfoOnCompletedTask?.SetResult(true);
+					}
+					else
+					{
+						var masterPage = GetInitializedPage(OrderKingCoreDemo.Pages.Menu.ToString());
+						//Xamarin.Forms return exception when master page title is null
+						//this title not visible in app
+						masterPage.Title = nameof(masterPage);
+						var detailPage = new NavigationPage(newPage);
+						Application.Current.MainPage = new MasterDetailPage {
+							Master = masterPage,
+							Detail = detailPage
+						};
 					}
 				}
 				catch (Exception e) {
@@ -179,7 +200,7 @@ namespace OrderKingCoreDemo.UI
 					pushInfoOnCompletedTask?.SetResult(false);
 				}
 			});
-		
+
 		}
 		void CustomPush(Page newPage, TaskCompletionSource<bool> pushInfoOnCompletedTask) {
 			// TODO: Implement your own navigation stack manipulation using popInfo
@@ -212,7 +233,7 @@ namespace OrderKingCoreDemo.UI
 		        {
 		            completed.SetResult(false);
 		        }
-		    }); 
+		    });
 		}
 	    void CustomPop(TaskCompletionSource<bool> completed)
 	    {
@@ -231,7 +252,7 @@ namespace OrderKingCoreDemo.UI
 		       {
                    completed.SetResult(false);
 		       }
-		   }); 
+		   });
 		}
 		static string GetTypeBaseName(MemberInfo info)
 		{
@@ -302,7 +323,7 @@ namespace OrderKingCoreDemo.UI
 		#endregion
 	}
 
-   
+
 
     public class NavigationPushInfo
 	{

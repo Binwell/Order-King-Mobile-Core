@@ -31,7 +31,8 @@ namespace OrderKingCoreDemo
 		Normal,
 		Modal,
 		RootPage,
-		Custom
+		Custom,
+		Master
 	}
 
 	public enum PageState {
