@@ -1,4 +1,5 @@
 using OrderKingCoreDemo.DAL.DataServices;
+using OrderKingCoreDemo.Helpers;
 using OrderKingCoreDemo.UI;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace OrderKingCoreDemo
 		public App ()
 		{
 			InitializeComponent();
-
+			SettingService.Init(this);
 			DialogService.Init(this);
 			DataServices.Init(true);
 			NavigationService.Init(Pages.HotelInfo);
