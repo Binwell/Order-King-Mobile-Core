@@ -2,6 +2,7 @@
 <pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:OrderKingCoreDemo.UI.Pages;assembly=OrderKingCoreDemo"
+             xmlns:converters="clr-namespace:OrderKingCoreDemo.UI.Converters;assembly=OrderKingCoreDemo"
              x:Class="OrderKingCoreDemo.UI.Pages.Hotel.MenuPage">
     <ContentPage.Content>
         <StackLayout>
@@ -9,7 +10,8 @@
 			<Button Text="HotelInfo" Command="{Binding GoToHotelInfoCommand}"/>
 	        <Button Text="Login" Command="{Binding GoToLoginCommand}"/>
 	        <Button Text="ServiceList" Command="{Binding GoToServiceListCommand}"/>
-			<Button Text="RestaurantList" Command="{Binding GoToRestaurantListCommand}"/>
+			<Button Text="RestaurantList" Command="{Binding GoToRestaurantListCommand}"
+			        IsVisible="{Binding RestaurantItemsSource, Converter={x:Static converters:StaticConverters.NullToInvisibleConverter}}"/>
 			<Button Text="FitnessList" Command="{Binding GoToFitnessListCommand}"/>
 			<Button Text="GuideCategories" Command="{Binding GoToGuideCategoriesCommand}"/>
 			<Button Text="ChatCategories" Command="{Binding GoToChatCategoriesCommand}"/>
