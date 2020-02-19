@@ -9,7 +9,7 @@ namespace OrderKingCoreDemo.DAL.DataObjects {
 		public string Phone { get; set; }
 		public double? Latitude { get; set; }
 		public double? Longitude { get; set; }
-		public bool Feature { get; set; }
+		public string Feature { get; set; }
 		public List<MenuCategory> MenuCategoryList { get; set; }
 	}
 	public class MenuCategory {
