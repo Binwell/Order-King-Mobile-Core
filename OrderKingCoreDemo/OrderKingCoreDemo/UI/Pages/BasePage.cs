@@ -8,16 +8,19 @@ namespace OrderKingCoreDemo.UI.Pages
 	public class BasePage : ContentPage, IDisposable {
 		protected BaseViewModel BaseViewModel => BindingContext as BaseViewModel;
 
-		
+
 		public void Dispose() {
 			BaseViewModel?.Dispose();
 		}
 
-		protected override void OnParentSet() {
+		protected override void OnParentSet()
+		{
 			base.OnParentSet();
-			if (Parent == null) {
+			if (Parent == null)
 				Dispose();
-			}
+			else
+				BaseViewModel.StartLoadData();
+
 		}
 
 
@@ -27,7 +30,6 @@ namespace OrderKingCoreDemo.UI.Pages
 				await Task.Delay(50); // Allow UI to handle events loop
 				if (BaseViewModel != null) {
 					await BaseViewModel.OnPageAppearing();
-					BaseViewModel.StartLoadData();
 				}
 			});
 		}

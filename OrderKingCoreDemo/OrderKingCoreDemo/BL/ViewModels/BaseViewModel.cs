@@ -36,7 +36,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 	public class BaseViewModel : Bindable, IDisposable {
 		readonly CancellationTokenSource _networkTokenSource = new CancellationTokenSource();
 		readonly ConcurrentDictionary<string, ICommand> _cachedCommands = new ConcurrentDictionary<string, ICommand>();
-		
+
 		public Dictionary<string, object> NavigationParams {
 			get => Get<Dictionary<string, object>>();
 			private set {
@@ -49,7 +49,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 			get => Get(PageState.Clean);
 			set => Set(value);
 		}
-		
+
 		public bool IsLoadDataStarted {
 			get => Get<bool>();
 			protected internal set => Set(value);
@@ -59,7 +59,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 		public CancellationToken CancellationToken => _networkTokenSource?.Token ?? CancellationToken.None;
 
 		public ICommand GoBackCommand => MakeCommand(GoBackCommandExecute);
- 
+
 		public void Dispose() {
 			Dispose(true);
 			GC.SuppressFinalize(this);
@@ -108,7 +108,7 @@ namespace OrderKingCoreDemo.BL.ViewModels {
 		}
 
 		protected static Task<bool> NavigateTo(object toName,
-			object fromName,
+			object fromName = null,
 			NavigationMode mode = NavigationMode.Normal,
 			string toTitle = null,
 			Dictionary<string, object> navParams = null,

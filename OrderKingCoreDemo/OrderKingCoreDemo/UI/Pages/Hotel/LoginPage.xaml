@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
 			<Label Text="LoginPage"/>
-			<Button Text="HotelInfo" Command="{Binding GoToHotelInfoCommand}"/>
+			<Button Text="Login" Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

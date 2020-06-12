@@ -9,18 +9,22 @@ namespace OrderKingCoreDemo
 {
 	public partial class App : Application
 	{
-		public App ()
+		/// <summary>
+		/// DO NOT TOUCH APP()
+		/// </summary>
+		public App()
+		{
+			//Fix ios crash
+			Current.MainPage = new ContentPage();
+		}
+
+		protected override async void OnStart ()
 		{
 			InitializeComponent();
 			SettingService.Init(this);
 			DialogService.Init(this);
 			DataServices.Init(true);
-			NavigationService.Init(Pages.HotelInfo);
- 		}
-
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
+			await NavigationService.Init(Pages.Login);
 		}
 
 		protected override void OnSleep ()
